@@ -1,0 +1,19 @@
+<view class="container">
+  <view class="card">
+    <view class="title">初始化身份信息</view>
+
+    <view class="form-item">
+      <view class="small-text">姓名</view>
+      <input class="input" placeholder="请输入姓名" value="{{name}}" bindinput="onNameInput" />
+    </view>
+
+    <view class="form-item">
+      <view class="small-text">角色</view>
+      <picker mode="selector" range="{{roleOptions}}" bindchange="onRoleChange">
+        <view class="picker-box">{{roleLabel}}</view>
+      </picker>
+    </view>
+
+    <button type="primary" bindtap="submit">保存</button>
+  </view>
+</view>

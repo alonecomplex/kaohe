@@ -1,0 +1,38 @@
+<view class="container">
+  <view class="card">
+    <view class="sub-title">统计月份</view>
+    <input class="input" placeholder="请输入月份，如 2026-07" value="{{month}}" bindinput="onMonthInput" />
+    <button style="margin-top:16rpx;" bindtap="fetchSummary">查询统计</button>
+  </view>
+
+  <view class="card" wx:if="{{overview}}">
+    <view class="sub-title">总体概览</view>
+    <view>月份：{{overview.month}}</view>
+    <view>总记录数：{{overview.totalRecords}}</view>
+    <view>学生人数：{{overview.studentCount}}</view>
+    <view>已阅数：{{overview.reviewedCount}}</view>
+    <view>待审核数：{{overview.pendingCount}}</view>
+  </view>
+
+  <view class="card" wx:if="{{typeSummary}}">
+    <view class="sub-title">活动类型汇总</view>
+    <view>参加会议：{{typeSummary.meeting}}</view>
+    <view>组会发言：{{typeSummary.groupMeeting}}</view>
+    <view>论文阅读：{{typeSummary.paperReading}}</view>
+    <view>其他：{{typeSummary.other}}</view>
+  </view>
+
+  <view class="card">
+    <view class="sub-title">每个学生月度统计</view>
+    <view wx:for="{{studentSummary}}" wx:key="studentId" style="margin-bottom:20rpx; border-bottom:1rpx solid #f0f0f0; padding-bottom:20rpx;">
+      <view><b>{{item.studentName}}</b>（{{item.studentNo}}）</view>
+      <view>总数：{{item.total}}</view>
+      <view>参加会议：{{item.meeting}}</view>
+      <view>组会发言：{{item.groupMeeting}}</view>
+      <view>论文阅读：{{item.paperReading}}</view>
+      <view>其他：{{item.other}}</view>
+      <view>已阅：{{item.reviewed}}</view>
+      <view>待审核：{{item.pending}}</view>
+    </view>
+  </view>
+</view>

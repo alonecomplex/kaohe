@@ -1,0 +1,18 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/user-init/index",
+    "pages/record-create/index",
+    "pages/record-list/index",
+    "pages/mentor-review/index",
+    "pages/admin-dashboard/index"
+  ],
+  "window": {
+    "navigationBarTitleText": "研究生学习情况考核",
+    "navigationBarBackgroundColor": "#ffffff",
+    "navigationBarTextStyle": "black",
+    "backgroundColor": "#f7f8fa"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

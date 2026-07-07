@@ -1,0 +1,34 @@
+<view class="container">
+  <view class="card">
+    <view class="sub-title">按月份筛选</view>
+    <input class="input" placeholder="请输入月份，如 2026-07，不填则查全部" value="{{month}}" bindinput="onMonthInput" />
+    <button style="margin-top: 16rpx;" bindtap="fetchData">查询</button>
+  </view>
+
+  <view wx:for="{{list}}" wx:key="_id" class="card">
+    <view class="row">
+      <view class="sub-title">{{item.title}}</view>
+      <view class="{{item.status==='reviewed' ? 'status-reviewed' : 'status-pending'}}">
+        {{item.status === 'reviewed' ? '已阅' : '待审核'}}
+      </view>
+    </view>
+    <view>类型：{{item.type}}</view>
+    <view>日期：{{item.date}}</view>
+    <view>内容：{{item.content}}</view>
+    <view>总结：{{item.summary}}</view>
+    <view wx:if="{{item.mentorComment}}">导师评语：{{item.mentorComment}}</view>
+
+    <view class="image-list">
+      <image
+        wx:for="{{item.images}}"
+        wx:key="*this"
+        class="preview-image"
+        src="{{item}}"
+        mode="aspectFill"
+        bindtap="previewImage"
+        data-urls="{{item.images}}"
+        data-current="{{item}}"
+      />
+    </view>
+  </view>
+</view>

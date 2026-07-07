@@ -1,0 +1,28 @@
+<view class="container">
+  <view class="card">
+    <view class="title">研究生学习情况考核</view>
+    <view>姓名：{{name || '未初始化'}}</view>
+    <view>角色：{{roleText}}</view>
+  </view>
+
+  <view wx:if="{{!role}}" class="card">
+    <view class="sub-title">首次使用</view>
+    <button type="primary" bindtap="goUserInit">去初始化身份</button>
+  </view>
+
+  <view wx:if="{{role==='student'}}" class="card btn-group">
+    <view class="sub-title">学生功能</view>
+    <button type="primary" bindtap="goCreate">新增记录</button>
+    <button bindtap="goList">我的记录</button>
+  </view>
+
+  <view wx:if="{{role==='mentor'}}" class="card btn-group">
+    <view class="sub-title">导师功能</view>
+    <button type="primary" bindtap="goMentor">审核学生记录</button>
+  </view>
+
+  <view wx:if="{{role==='assistant'}}" class="card btn-group">
+    <view class="sub-title">科研助理功能</view>
+    <button type="primary" bindtap="goAdmin">统计分析</button>
+  </view>
+</view>

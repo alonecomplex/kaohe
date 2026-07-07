@@ -1,0 +1,49 @@
+<view class="container">
+  <view class="card">
+    <view class="title">新增学习记录</view>
+
+    <view class="form-item">
+      <view class="small-text">活动类型</view>
+      <picker mode="selector" range="{{typeOptions}}" bindchange="onTypeChange">
+        <view class="picker-box">{{type}}</view>
+      </picker>
+    </view>
+
+    <view class="form-item">
+      <view class="small-text">活动日期</view>
+      <input class="input" placeholder="请输入日期，如 2026-07-07" value="{{date}}" bindinput="onDateInput" />
+    </view>
+
+    <view class="form-item">
+      <view class="small-text">标题/主题</view>
+      <input class="input" placeholder="请输入标题" value="{{title}}" bindinput="onTitleInput" />
+    </view>
+
+    <view class="form-item">
+      <view class="small-text">内容简介</view>
+      <textarea class="textarea" placeholder="请输入内容简介" value="{{content}}" bindinput="onContentInput"></textarea>
+    </view>
+
+    <view class="form-item">
+      <view class="small-text">收获总结</view>
+      <textarea class="textarea" placeholder="请输入收获总结" value="{{summary}}" bindinput="onSummaryInput"></textarea>
+    </view>
+
+    <view class="form-item">
+      <button bindtap="chooseImages">上传截图</button>
+      <view class="image-list">
+        <image
+          wx:for="{{images}}"
+          wx:key="*this"
+          class="preview-image"
+          src="{{item}}"
+          mode="aspectFill"
+          bindtap="previewImage"
+          data-url="{{item}}"
+        />
+      </view>
+    </view>
+
+    <button type="primary" bindtap="submitRecord">提交记录</button>
+  </view>
+</view>

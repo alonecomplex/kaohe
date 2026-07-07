@@ -1,0 +1,82 @@
+page {
+  background: #f7f8fa;
+  color: #333;
+  font-size: 28rpx;
+}
+
+.container {
+  padding: 24rpx;
+}
+
+.card {
+  background: #fff;
+  border-radius: 16rpx;
+  padding: 24rpx;
+  margin-bottom: 20rpx;
+  box-shadow: 0 4rpx 16rpx rgba(0, 0, 0, 0.04);
+}
+
+.title {
+  font-size: 36rpx;
+  font-weight: 600;
+  margin-bottom: 24rpx;
+}
+
+.sub-title {
+  font-size: 30rpx;
+  font-weight: 600;
+  margin-bottom: 16rpx;
+}
+
+.form-item {
+  margin-bottom: 20rpx;
+}
+
+.input,
+.textarea,
+.picker-box {
+  background: #fff;
+  border-radius: 12rpx;
+  padding: 20rpx;
+  border: 1rpx solid #e5e6eb;
+}
+
+.textarea {
+  min-height: 180rpx;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.btn-group button {
+  margin-bottom: 16rpx;
+}
+
+.status-pending {
+  color: #fa8c16;
+}
+
+.status-reviewed {
+  color: #52c41a;
+}
+
+.image-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16rpx;
+  margin-top: 16rpx;
+}
+
+.preview-image {
+  width: 180rpx;
+  height: 180rpx;
+  border-radius: 12rpx;
+}
+
+.small-text {
+  color: #666;
+  font-size: 24rpx;
+}
